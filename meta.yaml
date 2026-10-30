@@ -1,0 +1,30 @@
+metadata_text = """dataset: airfoil_drag_polar
+created: 2026-10-31
+operator: Buğra Gülbeyaz
+name: 
+time: 00.40
+project: ME 405/505 - Homework 1
+teacher: Orçun Koray Çelebi
+
+source:
+  type: experiment
+  description: Wind tunnel drag measurements across angles of attack
+
+columns:
+  angle_deg:
+    description: Angle of attack
+    unit: degrees
+    type: float
+  drag_coefficient:
+    description: Aerodynamic drag coefficient (Cd)
+    unit: dimensionless
+    type: float
+
+missing_value: NaN
+processing: raw/DragAndAngle.xlsx -> scripts/clean.py -> processed/drag_and_angle_clean.csv
+"""
+
+with open("meta.yaml", "w", encoding="utf-8") as f:
+    f.write(metadata_text)
+
+print("metadata.yaml successfully created!")
